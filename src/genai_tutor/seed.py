@@ -78,7 +78,7 @@ def _seed_study_days() -> None:
     domains = _load("domains.json")
 
     # Build ordered list of (domain_id, subtopic_id) pairs
-    # 20 subtopic days + 8 weighted review days (D2=3, D1=2, D3=2, D4=1)
+    # 31 subtopic days + 8 weighted review days (D2=3, D1=2, D3=2, D4=1)
     schedule: list[tuple[int, list[int]]] = []
     for domain in domains:
         for st in domain.get("subtopics", []):

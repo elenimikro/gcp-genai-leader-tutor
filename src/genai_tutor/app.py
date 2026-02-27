@@ -436,7 +436,7 @@ def _run_dashboard() -> None:
     pct = data["study_completion_pct"]
     bar_width = 40
     filled = int(bar_width * pct / 100)
-    bar = "\[" + "#" * filled + "-" * (bar_width - filled) + "]"
+    bar = r"\[" + "#" * filled + "-" * (bar_width - filled) + "]"
     console.print(f"\nStudy Plan: {bar} {pct:.0f}%")
 
     _prompt_continue()
@@ -541,7 +541,7 @@ def plan(
 
 def _run_plan(do_reset: bool = False) -> None:
     console.clear()
-    _print_header("28-Day Study Plan", "GCP Generative AI Leader")
+    _print_header("39-Day Study Plan", "GCP Generative AI Leader")
 
     if do_reset:
         confirm = console.input("[bold red]This will reset ALL quiz results, flashcard progress, and study completion. Are you sure? (yes/no): [/bold red]").strip().lower()

@@ -6,9 +6,9 @@ A local CLI study tool to help you prepare for the [Google Cloud Generative AI L
 
 ## Features
 
-- **28-day structured study plan** covering all 4 exam domains
-- **85 practice questions** with detailed explanations
-- **62 flashcards** with SM-2 spaced repetition (cards resurface at optimal intervals)
+- **39-day structured study plan** covering all 4 exam domains and every subtopic
+- **122 practice questions** with detailed explanations
+- **78 flashcards** with SM-2 spaced repetition (cards resurface at optimal intervals)
 - **Readiness dashboard** with weighted score (quiz 50%, flashcards 30%, completion 20%)
 - **Weak area review** — automatically identifies and drills low-scoring topics
 - 100% offline — all data stored locally in `~/.genai_tutor/tutor.db`
