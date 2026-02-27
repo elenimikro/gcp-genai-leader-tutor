@@ -1,5 +1,7 @@
 # GCP Generative AI Leader Tutor
 
+[![Google Cloud Certification](https://img.shields.io/badge/Google%20Cloud-Generative%20AI%20Leader-4285F4?style=flat&logo=googlecloud&logoColor=white)](https://cloud.google.com/learn/certification/generative-ai-leader)
+
 A local CLI study tool to help you prepare for the [Google Cloud Generative AI Leader certification](https://cloud.google.com/learn/certification/generative-ai-leader).
 
 ## Features
