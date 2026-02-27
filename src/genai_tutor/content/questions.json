@@ -1,0 +1,852 @@
+[
+  {
+    "id": 1, "domain_id": 1, "subtopic_id": 1,
+    "stem": "What best describes generative AI compared to traditional AI?",
+    "choice_a": "Generative AI only performs classification tasks on structured data.",
+    "choice_b": "Generative AI can create new content such as text, images, and audio, while traditional AI typically analyzes or predicts based on existing data.",
+    "choice_c": "Generative AI is a subset of robotics used for physical automation.",
+    "choice_d": "Traditional AI requires more data than generative AI to function effectively.",
+    "correct_answer": "b",
+    "explanation": "Generative AI produces new content (text, images, code, audio, video) rather than simply classifying or predicting. Traditional AI/ML models typically analyze existing data to detect patterns or make predictions without creating new artifacts."
+  },
+  {
+    "id": 2, "domain_id": 1, "subtopic_id": 1,
+    "stem": "Which technology breakthrough primarily enabled the rapid advancement of large language models (LLMs)?",
+    "choice_a": "Convolutional Neural Networks (CNNs)",
+    "choice_b": "The Transformer architecture introduced in 'Attention Is All You Need'",
+    "choice_c": "Recurrent Neural Networks (RNNs) with LSTM cells",
+    "choice_d": "Support Vector Machines (SVMs)",
+    "correct_answer": "b",
+    "explanation": "The Transformer architecture (2017) introduced the self-attention mechanism, enabling models to process long sequences in parallel and capture long-range dependencies. This breakthrough underpins virtually all modern LLMs including GPT, Gemini, and BERT."
+  },
+  {
+    "id": 3, "domain_id": 1, "subtopic_id": 2,
+    "stem": "In the machine learning lifecycle, what is the primary purpose of the 'evaluation' phase?",
+    "choice_a": "Collecting and labeling training data",
+    "choice_b": "Deploying the model to production infrastructure",
+    "choice_c": "Measuring model performance against held-out data to assess generalization",
+    "choice_d": "Selecting the cloud provider for hosting",
+    "correct_answer": "c",
+    "explanation": "Evaluation assesses how well a trained model generalizes to unseen data by measuring metrics like accuracy, F1-score, or BLEU on a held-out test set. This ensures the model performs well beyond the training data before deployment."
+  },
+  {
+    "id": 4, "domain_id": 1, "subtopic_id": 2,
+    "stem": "What is 'overfitting' in machine learning?",
+    "choice_a": "When a model is too simple to capture patterns in the data",
+    "choice_b": "When a model learns training data too well, including noise, and performs poorly on new data",
+    "choice_c": "When a model is trained on too little data",
+    "choice_d": "When a model takes too long to train",
+    "correct_answer": "b",
+    "explanation": "Overfitting occurs when a model memorizes the training data, including noise and irrelevant details, resulting in excellent training performance but poor generalization to new, unseen examples. Techniques like regularization, dropout, and cross-validation help prevent it."
+  },
+  {
+    "id": 5, "domain_id": 1, "subtopic_id": 3,
+    "stem": "What is a 'foundation model' in the context of generative AI?",
+    "choice_a": "A small, task-specific model trained on a narrow dataset",
+    "choice_b": "A large model pre-trained on vast amounts of data that can be adapted to many downstream tasks",
+    "choice_c": "The first version of any machine learning model before fine-tuning",
+    "choice_d": "A model exclusively used for image recognition",
+    "correct_answer": "b",
+    "explanation": "Foundation models are large-scale models pre-trained on broad, diverse datasets. They serve as a base that can be adapted (via fine-tuning or prompting) for many downstream tasks. Examples include Gemini, GPT-4, and BERT."
+  },
+  {
+    "id": 6, "domain_id": 1, "subtopic_id": 3,
+    "stem": "What is the role of 'embeddings' in generative AI systems?",
+    "choice_a": "Embeddings store raw user data in encrypted format",
+    "choice_b": "Embeddings are dense vector representations that capture semantic meaning, enabling similarity search and retrieval",
+    "choice_c": "Embeddings are used to compress model weights for deployment",
+    "choice_d": "Embeddings convert images to text for processing",
+    "correct_answer": "b",
+    "explanation": "Embeddings are numerical vector representations of data (text, images, audio) that capture semantic meaning in a high-dimensional space. Similar items have vectors close together, enabling semantic search, clustering, and retrieval-augmented generation."
+  },
+  {
+    "id": 7, "domain_id": 1, "subtopic_id": 3,
+    "stem": "Which type of model generates images by learning to reverse a noise-addition process?",
+    "choice_a": "Transformer model",
+    "choice_b": "Generative Adversarial Network (GAN)",
+    "choice_c": "Diffusion model",
+    "choice_d": "Variational Autoencoder (VAE)",
+    "correct_answer": "c",
+    "explanation": "Diffusion models generate images by learning to reverse a process that gradually adds Gaussian noise to training images. During inference, they start from pure noise and iteratively denoise to produce high-quality outputs. Imagen and Stable Diffusion use this approach."
+  },
+  {
+    "id": 8, "domain_id": 1, "subtopic_id": 3,
+    "stem": "What does 'multimodal' mean in the context of AI models?",
+    "choice_a": "The model can run on multiple cloud platforms simultaneously",
+    "choice_b": "The model can process and generate multiple types of data such as text, images, audio, and video",
+    "choice_c": "The model uses multiple training algorithms in parallel",
+    "choice_d": "The model supports multiple programming languages for code generation",
+    "correct_answer": "b",
+    "explanation": "Multimodal AI models can understand and generate multiple data modalities — text, images, audio, video, and code. Gemini is natively multimodal, enabling it to reason across text and images in the same context window."
+  },
+  {
+    "id": 9, "domain_id": 1, "subtopic_id": 4,
+    "stem": "Which generative AI use case would best help a customer service team reduce response time?",
+    "choice_a": "Using gen AI to generate synthetic training data for computer vision",
+    "choice_b": "Deploying a conversational AI chatbot that answers common customer queries automatically",
+    "choice_c": "Training a classification model to sort incoming emails by topic",
+    "choice_d": "Using gen AI to optimize database query performance",
+    "correct_answer": "b",
+    "explanation": "A conversational AI chatbot can handle common, repetitive customer queries automatically and 24/7, significantly reducing response time and freeing human agents for complex issues. This is a direct, high-impact application of generative AI for customer service."
+  },
+  {
+    "id": 10, "domain_id": 1, "subtopic_id": 4,
+    "stem": "A marketing team wants to generate multiple variations of ad copy quickly. Which generative AI capability is most relevant?",
+    "choice_a": "Anomaly detection",
+    "choice_b": "Text generation and content creation",
+    "choice_c": "Predictive analytics",
+    "choice_d": "Computer vision object detection",
+    "correct_answer": "b",
+    "explanation": "Text generation is a core generative AI capability that can produce multiple variations of marketing copy, slogans, and ad content quickly. This dramatically accelerates creative workflows by providing diverse options for human review and selection."
+  },
+  {
+    "id": 11, "domain_id": 1, "subtopic_id": 5,
+    "stem": "What is 'hallucination' in large language models?",
+    "choice_a": "When the model generates content with perfect accuracy",
+    "choice_b": "When the model confidently produces factually incorrect or fabricated information",
+    "choice_c": "When the model refuses to answer a question",
+    "choice_d": "When the model generates content in the wrong language",
+    "correct_answer": "b",
+    "explanation": "Hallucination refers to LLMs generating plausible-sounding but factually incorrect, nonsensical, or fabricated information with apparent confidence. It's a significant reliability concern. Techniques like grounding, RAG, and human review help mitigate hallucinations."
+  },
+  {
+    "id": 12, "domain_id": 1, "subtopic_id": 5,
+    "stem": "Which principle of responsible AI ensures that AI decisions can be understood and justified?",
+    "choice_a": "Scalability",
+    "choice_b": "Explainability",
+    "choice_c": "Latency optimization",
+    "choice_d": "Cost efficiency",
+    "correct_answer": "b",
+    "explanation": "Explainability means that AI system decisions and predictions can be understood by humans. It's a core responsible AI principle enabling trust, accountability, and the ability to identify and correct issues like bias or errors in model behavior."
+  },
+  {
+    "id": 13, "domain_id": 1, "subtopic_id": 5,
+    "stem": "What is 'algorithmic bias' in AI systems?",
+    "choice_a": "When an algorithm consistently runs slower than expected",
+    "choice_b": "When systematic errors in a model produce unfair outcomes that favor certain groups over others",
+    "choice_c": "When a model uses too much computational power",
+    "choice_d": "When an algorithm generates biased random numbers",
+    "correct_answer": "b",
+    "explanation": "Algorithmic bias occurs when AI systems produce systematically unfair outcomes, often because training data reflects historical inequalities or doesn't adequately represent all groups. It can perpetuate or amplify discrimination in high-stakes decisions."
+  },
+  {
+    "id": 14, "domain_id": 1, "subtopic_id": 6,
+    "stem": "What does the BLEU score measure in generative AI evaluation?",
+    "choice_a": "The speed of model inference",
+    "choice_b": "The quality of machine-generated text by comparing it to reference translations using n-gram overlap",
+    "choice_c": "The safety of model outputs",
+    "choice_d": "The cost of running a model in production",
+    "correct_answer": "b",
+    "explanation": "BLEU (Bilingual Evaluation Understudy) measures how much a generated text overlaps with one or more reference texts using n-gram precision. Originally designed for machine translation, it's widely used to evaluate text generation quality."
+  },
+  {
+    "id": 15, "domain_id": 1, "subtopic_id": 6,
+    "stem": "What does 'perplexity' measure in language model evaluation?",
+    "choice_a": "How confused the user is by the model's output",
+    "choice_b": "How well the model predicts a sample of text — lower perplexity indicates better predictive performance",
+    "choice_c": "The number of parameters in the model",
+    "choice_d": "The latency of model responses",
+    "correct_answer": "b",
+    "explanation": "Perplexity measures how well a probability model predicts a test sample. A lower perplexity score indicates the model is better at predicting the sequence. It's commonly used to compare language models during training and evaluation."
+  },
+  {
+    "id": 16, "domain_id": 2, "subtopic_id": 7,
+    "stem": "Which Gemini model variant is optimized for on-device, low-latency tasks?",
+    "choice_a": "Gemini Ultra",
+    "choice_b": "Gemini Pro",
+    "choice_c": "Gemini Flash",
+    "choice_d": "Gemini Nano",
+    "correct_answer": "d",
+    "explanation": "Gemini Nano is Google's smallest, most efficient model designed for on-device tasks on mobile and edge devices. It offers low latency and can run without network connectivity, making it ideal for real-time, privacy-preserving applications."
+  },
+  {
+    "id": 17, "domain_id": 2, "subtopic_id": 7,
+    "stem": "What makes Gemini unique compared to many other large language models?",
+    "choice_a": "Gemini is only available for Google employees",
+    "choice_b": "Gemini was built natively multimodal, able to reason across text, images, audio, video, and code from the ground up",
+    "choice_c": "Gemini only processes text and cannot handle images",
+    "choice_d": "Gemini is the only LLM that supports fine-tuning",
+    "correct_answer": "b",
+    "explanation": "Unlike models that add multimodal capabilities as extensions, Gemini was designed from the ground up to be natively multimodal. It can seamlessly reason about and generate text, images, audio, video, and code within a single model."
+  },
+  {
+    "id": 18, "domain_id": 2, "subtopic_id": 7,
+    "stem": "Which Gemini model is best suited for complex reasoning tasks requiring maximum capability?",
+    "choice_a": "Gemini Nano",
+    "choice_b": "Gemini Flash",
+    "choice_c": "Gemini Ultra",
+    "choice_d": "Gemini Lite",
+    "correct_answer": "c",
+    "explanation": "Gemini Ultra is Google's most capable model, designed for highly complex tasks requiring sophisticated reasoning, coding, and multimodal understanding. It achieves state-of-the-art performance on demanding benchmarks."
+  },
+  {
+    "id": 19, "domain_id": 2, "subtopic_id": 8,
+    "stem": "What is Vertex AI's primary purpose on Google Cloud?",
+    "choice_a": "Vertex AI is a networking service for connecting GCP resources",
+    "choice_b": "Vertex AI is a unified platform for building, deploying, and managing machine learning models at scale",
+    "choice_c": "Vertex AI is Google's primary database service for AI applications",
+    "choice_d": "Vertex AI is exclusively used for Gemini model inference",
+    "correct_answer": "b",
+    "explanation": "Vertex AI is Google Cloud's unified ML platform that brings together tools for the entire ML lifecycle: data preparation, model training, evaluation, deployment, and monitoring. It supports both Google's foundation models and custom models."
+  },
+  {
+    "id": 20, "domain_id": 2, "subtopic_id": 8,
+    "stem": "What feature of Vertex AI helps developers quickly prototype and test generative AI prompts?",
+    "choice_a": "Vertex AI Workbench",
+    "choice_b": "Generative AI Studio",
+    "choice_c": "Vertex AI Pipelines",
+    "choice_d": "Vertex AI Matching Engine",
+    "correct_answer": "b",
+    "explanation": "Generative AI Studio within Vertex AI provides a no-code interface for testing, tuning, and deploying generative AI models. Developers can design prompts, adjust parameters like temperature, and test model responses without writing code."
+  },
+  {
+    "id": 21, "domain_id": 2, "subtopic_id": 8,
+    "stem": "What is the Vertex AI Matching Engine used for?",
+    "choice_a": "Matching job candidates to open positions using AI",
+    "choice_b": "High-scale, low-latency vector similarity search for nearest-neighbor retrieval",
+    "choice_c": "Matching database schemas for migration projects",
+    "choice_d": "A/B testing different model versions in production",
+    "correct_answer": "b",
+    "explanation": "Vertex AI Matching Engine (now part of Vector Search) provides high-scale, low-latency approximate nearest neighbor search over high-dimensional vector embeddings. It's essential infrastructure for RAG systems and semantic search applications."
+  },
+  {
+    "id": 22, "domain_id": 2, "subtopic_id": 9,
+    "stem": "What is the Model Garden in Vertex AI?",
+    "choice_a": "A physical data center where Google stores its AI models",
+    "choice_b": "A curated catalog of foundation models from Google and third-party providers that can be discovered, tested, and deployed",
+    "choice_c": "A version control system for ML model artifacts",
+    "choice_d": "A monitoring dashboard for deployed models",
+    "correct_answer": "b",
+    "explanation": "The Model Garden is a centralized model hub in Vertex AI where users can discover, test, and deploy a wide range of foundation models including Google's Gemini, third-party open models (Llama, Mistral), and specialized models for various tasks."
+  },
+  {
+    "id": 23, "domain_id": 2, "subtopic_id": 10,
+    "stem": "What is Duet AI / Gemini for Google Workspace designed to do?",
+    "choice_a": "Replace all human workers in an organization with AI",
+    "choice_b": "Enhance productivity by integrating gen AI capabilities into Gmail, Docs, Sheets, Slides, and Meet",
+    "choice_c": "Provide cloud infrastructure management through AI",
+    "choice_d": "Generate training data for custom ML models",
+    "correct_answer": "b",
+    "explanation": "Duet AI (now rebranded as Gemini for Google Workspace) integrates generative AI into productivity tools like Gmail (drafting emails), Docs (writing assistance), Sheets (formula generation), Slides (content creation), and Meet (notes and summaries)."
+  },
+  {
+    "id": 24, "domain_id": 2, "subtopic_id": 10,
+    "stem": "Which Gemini for Workspace feature helps users during video meetings?",
+    "choice_a": "Automatic code review for software engineers",
+    "choice_b": "AI-generated meeting notes, action items, and summaries in Google Meet",
+    "choice_c": "Automatic scheduling of follow-up meetings",
+    "choice_d": "Real-time translation of all spoken languages",
+    "correct_answer": "b",
+    "explanation": "Gemini in Google Meet can automatically generate meeting notes, capture action items, and create summaries of recorded meetings, helping participants stay focused on discussions rather than note-taking and improving post-meeting productivity."
+  },
+  {
+    "id": 25, "domain_id": 2, "subtopic_id": 11,
+    "stem": "What is Google's Secure AI Framework (SAIF)?",
+    "choice_a": "A hardware security module for encrypting AI model weights",
+    "choice_b": "A conceptual framework by Google for making AI systems more secure, covering six core elements of AI security",
+    "choice_c": "A compliance certification required to use Google Cloud AI services",
+    "choice_d": "A firewall service specifically designed for AI workloads",
+    "correct_answer": "b",
+    "explanation": "SAIF (Secure AI Framework) is Google's open framework for AI security best practices. It covers six elements: expanding strong security foundations to AI, extending detection/response to include AI-specific risks, automating defenses, harmonizing platform-level controls, adapting controls to adjust mitigations, and contextualizing AI risk in existing processes."
+  },
+  {
+    "id": 26, "domain_id": 2, "subtopic_id": 11,
+    "stem": "How does Customer-Managed Encryption Keys (CMEK) benefit organizations using Google Cloud AI?",
+    "choice_a": "CMEK automatically reduces the cost of AI model training",
+    "choice_b": "CMEK gives organizations control over the encryption keys used to protect their data, meeting compliance requirements",
+    "choice_c": "CMEK speeds up model inference by using hardware encryption",
+    "choice_d": "CMEK prevents models from generating harmful content",
+    "correct_answer": "b",
+    "explanation": "CMEK lets organizations use their own encryption keys (stored in Cloud Key Management Service or external HSMs) to encrypt data at rest in Google Cloud services. This gives organizations greater control over data security and helps meet regulatory compliance requirements."
+  },
+  {
+    "id": 27, "domain_id": 2, "subtopic_id": 12,
+    "stem": "What is Dialogflow CX used for on Google Cloud?",
+    "choice_a": "Building and deploying virtual agents with complex conversation flows using state machines",
+    "choice_b": "Creating static FAQ pages for websites",
+    "choice_c": "Monitoring AI model performance in production",
+    "choice_d": "Managing large-scale batch AI inference jobs",
+    "correct_answer": "a",
+    "explanation": "Dialogflow CX is Google Cloud's advanced conversational AI platform for building enterprise-grade virtual agents and chatbots. It uses a flow-based (state machine) design for complex, multi-turn conversations across multiple channels."
+  },
+  {
+    "id": 28, "domain_id": 2, "subtopic_id": 12,
+    "stem": "What is Google Agentspace?",
+    "choice_a": "A physical office space provided by Google for AI startups",
+    "choice_b": "An enterprise AI platform that helps employees access information and take action across business systems using AI agents",
+    "choice_c": "A tool for managing Kubernetes deployments of AI models",
+    "choice_d": "A Google Cloud service for storing and versioning AI model artifacts",
+    "correct_answer": "b",
+    "explanation": "Google Agentspace is an enterprise AI platform that provides employees with an intelligent assistant that can search across enterprise data sources, answer questions, and take actions across business systems like ServiceNow, Jira, and Salesforce using AI agents."
+  },
+  {
+    "id": 29, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What is 'few-shot prompting' in prompt engineering?",
+    "choice_a": "Providing the model with no examples and asking it to generalize",
+    "choice_b": "Providing a small number of example input-output pairs in the prompt to guide the model's behavior",
+    "choice_c": "Fine-tuning a model on a small dataset",
+    "choice_d": "Using a shorter prompt to reduce token costs",
+    "correct_answer": "b",
+    "explanation": "Few-shot prompting includes a small number of demonstrations (input-output examples) in the prompt itself, teaching the model the desired format and behavior without any model weight updates. It's contrasted with zero-shot (no examples) and many-shot prompting."
+  },
+  {
+    "id": 30, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What is 'chain-of-thought' prompting?",
+    "choice_a": "Linking multiple AI models together in a pipeline",
+    "choice_b": "A prompting technique that encourages the model to reason step-by-step before giving a final answer",
+    "choice_c": "Chaining multiple API calls in a sequence",
+    "choice_d": "A method of compressing long prompts into shorter ones",
+    "correct_answer": "b",
+    "explanation": "Chain-of-thought (CoT) prompting instructs or demonstrates to the model that it should show its reasoning process step-by-step before giving the final answer. This improves performance on complex reasoning, math, and multi-step problems."
+  },
+  {
+    "id": 31, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What does the 'temperature' parameter control in a generative AI model?",
+    "choice_a": "The physical temperature of the GPU during inference",
+    "choice_b": "The randomness/creativity of model outputs — higher temperature produces more varied responses",
+    "choice_c": "The speed of model inference",
+    "choice_d": "The maximum number of tokens the model can generate",
+    "correct_answer": "b",
+    "explanation": "Temperature controls the randomness of token sampling during generation. Low temperature (near 0) makes outputs more deterministic and focused. High temperature produces more diverse and creative, but potentially less coherent outputs. It's a key parameter for controlling generation style."
+  },
+  {
+    "id": 32, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What is 'system prompting' (or system instructions) in generative AI?",
+    "choice_a": "Prompts sent by the operating system to control model execution",
+    "choice_b": "Persistent instructions provided to a model that define its role, persona, and behavioral constraints across all interactions",
+    "choice_c": "A technique for optimizing GPU utilization during training",
+    "choice_d": "The default prompt used when no user input is provided",
+    "correct_answer": "b",
+    "explanation": "System prompts (or system instructions) are persistent instructions provided to a model before the user conversation begins. They define the model's role (e.g., 'You are a helpful customer support agent'), persona, output format, and behavioral boundaries."
+  },
+  {
+    "id": 33, "domain_id": 3, "subtopic_id": 14,
+    "stem": "What is Retrieval-Augmented Generation (RAG)?",
+    "choice_a": "A technique for generating synthetic training data for model fine-tuning",
+    "choice_b": "A technique that retrieves relevant information from external knowledge sources at inference time to ground model responses",
+    "choice_c": "A method for training models on retrieved internet data",
+    "choice_d": "A Google Cloud service for archiving generated content",
+    "correct_answer": "b",
+    "explanation": "RAG combines a retrieval system (e.g., vector search over a document store) with a generative model. At inference time, relevant documents are retrieved and included in the prompt as context. This grounds the model's response in factual, up-to-date information, reducing hallucinations."
+  },
+  {
+    "id": 34, "domain_id": 3, "subtopic_id": 14,
+    "stem": "What problem does 'grounding' primarily solve in generative AI?",
+    "choice_a": "Improving model training speed",
+    "choice_b": "Reducing hallucinations by connecting model outputs to verifiable, real-world information",
+    "choice_c": "Lowering the cost of model deployment",
+    "choice_d": "Enabling models to process longer context windows",
+    "correct_answer": "b",
+    "explanation": "Grounding connects a model's outputs to authoritative, real-world information sources (documents, databases, search results), reducing the risk of hallucinations. Grounded models cite their sources and stay factually anchored to provided data rather than relying solely on parametric knowledge."
+  },
+  {
+    "id": 35, "domain_id": 3, "subtopic_id": 14,
+    "stem": "In a RAG system, what role does the vector database play?",
+    "choice_a": "It stores the model weights for fast retrieval",
+    "choice_b": "It stores document embeddings and enables fast semantic similarity search to find relevant context",
+    "choice_c": "It tracks user queries for analytics purposes",
+    "choice_d": "It encrypts generated content before sending to users",
+    "correct_answer": "b",
+    "explanation": "In RAG, a vector database (like Vertex AI Vector Search or Pinecone) stores embeddings of document chunks. At query time, the user's query is embedded and compared against stored embeddings to retrieve the most semantically relevant documents, which are then included as context for the LLM."
+  },
+  {
+    "id": 36, "domain_id": 3, "subtopic_id": 15,
+    "stem": "What is 'fine-tuning' in the context of foundation models?",
+    "choice_a": "Adjusting the hardware configuration for faster model inference",
+    "choice_b": "Further training a pre-trained foundation model on domain-specific or task-specific data to improve performance on targeted tasks",
+    "choice_c": "Compressing a model to reduce its size for deployment",
+    "choice_d": "Evaluating a model against a benchmark dataset",
+    "correct_answer": "b",
+    "explanation": "Fine-tuning adapts a pre-trained foundation model to specific domains or tasks by continuing training on a smaller, task-specific dataset. It updates some or all model weights to specialize behavior, improving performance on tasks not well-represented in the original pre-training data."
+  },
+  {
+    "id": 37, "domain_id": 3, "subtopic_id": 15,
+    "stem": "What does RLHF stand for and why is it important?",
+    "choice_a": "Rapid Learning with High Frequency — a technique for speeding up model training",
+    "choice_b": "Reinforcement Learning from Human Feedback — aligning model behavior with human preferences and values",
+    "choice_c": "Retrieval Learning with Hierarchical Fine-tuning — a type of RAG optimization",
+    "choice_d": "Robust Language Handling Framework — a safety evaluation standard",
+    "correct_answer": "b",
+    "explanation": "RLHF (Reinforcement Learning from Human Feedback) trains models to align with human preferences by having human raters evaluate model outputs, then using these ratings to train a reward model, which guides further RL training. It's key to making LLMs helpful, harmless, and honest."
+  },
+  {
+    "id": 38, "domain_id": 3, "subtopic_id": 15,
+    "stem": "What is the advantage of LoRA (Low-Rank Adaptation) for fine-tuning?",
+    "choice_a": "LoRA eliminates the need for any training data",
+    "choice_b": "LoRA reduces fine-tuning costs by training only small adapter matrices rather than all model weights",
+    "choice_c": "LoRA automatically selects the best hyperparameters for fine-tuning",
+    "choice_d": "LoRA improves model performance without any additional training",
+    "correct_answer": "b",
+    "explanation": "LoRA (Low-Rank Adaptation) is a parameter-efficient fine-tuning (PEFT) technique that inserts small trainable matrices (adapters) into transformer layers while keeping original weights frozen. This dramatically reduces memory and compute requirements while achieving comparable performance to full fine-tuning."
+  },
+  {
+    "id": 39, "domain_id": 3, "subtopic_id": 16,
+    "stem": "What is a common source of bias in AI training data?",
+    "choice_a": "Using too many programming languages in the training corpus",
+    "choice_b": "Historical data that reflects societal inequalities, underrepresentation of certain groups, or collection methods that skew samples",
+    "choice_c": "Training on data from multiple geographic regions",
+    "choice_d": "Including data from different time periods",
+    "correct_answer": "b",
+    "explanation": "Training data bias often stems from historical data encoding societal inequalities, over- or under-representation of demographic groups, geographic and linguistic imbalances, and biased data collection methods. These biases can be amplified by AI systems, producing discriminatory outputs."
+  },
+  {
+    "id": 40, "domain_id": 3, "subtopic_id": 16,
+    "stem": "What is 'model evaluation' in the context of responsible AI?",
+    "choice_a": "Measuring the cost and latency of model deployment",
+    "choice_b": "Systematically assessing model performance, fairness, safety, and potential harms before and after deployment",
+    "choice_c": "Comparing different cloud providers for AI services",
+    "choice_d": "Reviewing the source code of a model for vulnerabilities",
+    "correct_answer": "b",
+    "explanation": "Responsible AI model evaluation goes beyond accuracy metrics to assess fairness across demographic groups, safety (harmful output rates), robustness to adversarial inputs, and alignment with intended use. This comprehensive evaluation helps prevent harm before deployment and monitors ongoing behavior."
+  },
+  {
+    "id": 41, "domain_id": 4, "subtopic_id": 17,
+    "stem": "What is the most important first step when building an organizational AI strategy?",
+    "choice_a": "Immediately deploying AI in all business processes",
+    "choice_b": "Identifying clear business problems and opportunities where AI can deliver measurable value",
+    "choice_c": "Hiring a large team of AI researchers",
+    "choice_d": "Purchasing the most expensive AI hardware available",
+    "correct_answer": "b",
+    "explanation": "Effective AI strategy starts with clearly identifying business challenges and opportunities where AI can create measurable value. Without this foundation, AI initiatives risk being technology-driven rather than value-driven, leading to wasted investment and failed projects."
+  },
+  {
+    "id": 42, "domain_id": 4, "subtopic_id": 17,
+    "stem": "What does 'AI-first culture' mean in an organization?",
+    "choice_a": "Only hiring employees with AI expertise",
+    "choice_b": "A mindset where AI is considered as a strategic tool for every business decision and process improvement",
+    "choice_c": "Replacing all human workers with AI systems",
+    "choice_d": "Using only AI-generated content in all communications",
+    "correct_answer": "b",
+    "explanation": "An AI-first culture means that leaders and employees consistently consider how AI can improve decisions, products, and processes. It requires upskilling, fostering experimentation, creating cross-functional collaboration between business and technical teams, and integrating AI into strategic planning."
+  },
+  {
+    "id": 43, "domain_id": 4, "subtopic_id": 18,
+    "stem": "What is a key metric for measuring the success of a generative AI implementation?",
+    "choice_a": "Number of AI models deployed",
+    "choice_b": "Business outcomes such as productivity gains, cost reduction, revenue impact, or customer satisfaction improvement",
+    "choice_c": "Lines of code written to implement the AI solution",
+    "choice_d": "Amount of data ingested by the AI system",
+    "correct_answer": "b",
+    "explanation": "Successful AI implementations are measured by their impact on business outcomes: productivity improvements (time saved), cost reduction, revenue generation, customer satisfaction scores (NPS/CSAT), and quality improvements. Technical metrics like model accuracy are intermediate, not final measures of success."
+  },
+  {
+    "id": 44, "domain_id": 4, "subtopic_id": 18,
+    "stem": "What is the concept of 'human-in-the-loop' in AI deployment?",
+    "choice_a": "Requiring humans to manually type all inputs to AI systems",
+    "choice_b": "Designing AI systems so humans review, validate, or override AI decisions at critical points",
+    "choice_c": "Using human-generated synthetic data for model training",
+    "choice_d": "Monitoring AI systems' physical hardware performance",
+    "correct_answer": "b",
+    "explanation": "Human-in-the-loop (HITL) systems incorporate human judgment at critical decision points — humans review AI outputs before they're acted upon, especially for high-stakes decisions. This provides a safety net, improves accuracy, and maintains accountability when AI systems might make consequential errors."
+  },
+  {
+    "id": 45, "domain_id": 4, "subtopic_id": 19,
+    "stem": "According to Google's AI principles, what is a key commitment regarding AI development?",
+    "choice_a": "AI should only be developed for military applications",
+    "choice_b": "AI should be socially beneficial, avoid creating unfair bias, be built and tested for safety, and be accountable to people",
+    "choice_c": "AI development should prioritize speed over safety",
+    "choice_d": "AI should operate without any human oversight",
+    "correct_answer": "b",
+    "explanation": "Google's AI Principles commit to building AI that is socially beneficial, avoids unfair bias, is built and tested for safety, is accountable to people, incorporates privacy design, upholds scientific excellence, and is made available for uses consistent with these principles."
+  },
+  {
+    "id": 46, "domain_id": 4, "subtopic_id": 19,
+    "stem": "What is 'data privacy' in the context of AI systems?",
+    "choice_a": "Keeping AI model weights confidential from competitors",
+    "choice_b": "Ensuring that personal information used to train or process AI models is collected, stored, and used appropriately and in compliance with regulations",
+    "choice_c": "Encrypting all AI-generated outputs",
+    "choice_d": "Preventing users from accessing AI systems",
+    "correct_answer": "b",
+    "explanation": "Data privacy in AI involves ensuring that personal data used in AI systems is handled lawfully (consent, purpose limitation), stored securely, minimized to what's necessary, and protected from unauthorized access — complying with regulations like GDPR and CCPA."
+  },
+  {
+    "id": 47, "domain_id": 4, "subtopic_id": 20,
+    "stem": "Which healthcare application is a compelling use case for generative AI?",
+    "choice_a": "Replacing physicians in surgical procedures",
+    "choice_b": "Summarizing patient medical records and research papers to support clinical decision-making",
+    "choice_c": "Automatically prescribing medications without physician approval",
+    "choice_d": "Managing hospital parking reservations",
+    "correct_answer": "b",
+    "explanation": "In healthcare, gen AI can summarize lengthy patient records, extract key information from clinical notes, and synthesize medical research to support (not replace) physician decision-making. This helps clinicians access relevant information faster, improving care quality."
+  },
+  {
+    "id": 48, "domain_id": 4, "subtopic_id": 20,
+    "stem": "How can generative AI benefit the financial services industry?",
+    "choice_a": "By automatically making all investment decisions without human review",
+    "choice_b": "By automating document analysis (contracts, reports), generating personalized financial advice summaries, and detecting anomalies in transaction data",
+    "choice_c": "By eliminating all regulatory compliance requirements",
+    "choice_d": "By replacing human financial advisors entirely",
+    "correct_answer": "b",
+    "explanation": "Financial services gen AI applications include: intelligent document processing (contracts, regulatory filings), personalized customer communication, fraud pattern explanation, investment research summarization, and risk report generation — all augmenting human analysts rather than replacing them."
+  },
+  {
+    "id": 49, "domain_id": 2, "subtopic_id": 8,
+    "stem": "What is the purpose of Vertex AI Model Monitoring?",
+    "choice_a": "To monitor GPU temperature during model training",
+    "choice_b": "To detect data drift and model drift in deployed models, alerting teams when model performance degrades",
+    "choice_c": "To monitor the cost of Vertex AI usage",
+    "choice_d": "To track which users are accessing the model",
+    "correct_answer": "b",
+    "explanation": "Vertex AI Model Monitoring tracks deployed model performance over time, detecting when the statistical distribution of input data drifts from training data (data drift) or when prediction quality degrades (model drift). Alerts allow teams to retrain or update models before significant business impact occurs."
+  },
+  {
+    "id": 50, "domain_id": 1, "subtopic_id": 3,
+    "stem": "What is a 'context window' in large language models?",
+    "choice_a": "The browser window used to access the AI interface",
+    "choice_b": "The maximum amount of text (tokens) a model can consider at once when generating a response",
+    "choice_c": "The geographic region where the model is deployed",
+    "choice_d": "The time period during which a model was trained",
+    "correct_answer": "b",
+    "explanation": "The context window defines how much text (measured in tokens) an LLM can process simultaneously. It includes the system prompt, conversation history, documents, and the current query. Larger context windows (e.g., Gemini 1.5's 1M tokens) allow models to reason over entire books or codebases at once."
+  },
+  {
+    "id": 51, "domain_id": 2, "subtopic_id": 9,
+    "stem": "What is 'prompt engineering' in Generative AI Studio?",
+    "choice_a": "Building physical hardware for running AI models",
+    "choice_b": "The practice of crafting, testing, and refining input instructions to get optimal outputs from generative AI models",
+    "choice_c": "Engineering the source code of a generative AI model",
+    "choice_d": "Monitoring model prompts for security vulnerabilities",
+    "correct_answer": "b",
+    "explanation": "Prompt engineering is the art and science of designing effective inputs to generative AI models. Generative AI Studio provides a sandbox environment for experimenting with different prompt structures, few-shot examples, system instructions, and parameters to optimize model outputs."
+  },
+  {
+    "id": 52, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What is 'zero-shot prompting'?",
+    "choice_a": "Prompting a model that has received zero training",
+    "choice_b": "Asking a model to perform a task without providing any examples, relying on the model's pre-trained knowledge",
+    "choice_c": "Using a prompt with zero tokens",
+    "choice_d": "A technique that uses zero temperature for deterministic outputs",
+    "correct_answer": "b",
+    "explanation": "Zero-shot prompting asks a model to perform a task purely based on its pre-trained knowledge, without providing any task examples. The model must generalize from its training. Effective for capable models but may require few-shot examples for specialized or complex tasks."
+  },
+  {
+    "id": 53, "domain_id": 1, "subtopic_id": 1,
+    "stem": "Which of the following is NOT a type of machine learning?",
+    "choice_a": "Supervised learning",
+    "choice_b": "Unsupervised learning",
+    "choice_c": "Deterministic learning",
+    "choice_d": "Reinforcement learning",
+    "correct_answer": "c",
+    "explanation": "The three main types of machine learning are: supervised learning (labeled data), unsupervised learning (unlabeled data), and reinforcement learning (reward-based). 'Deterministic learning' is not a recognized category — deterministic systems don't learn, they follow fixed rules."
+  },
+  {
+    "id": 54, "domain_id": 2, "subtopic_id": 11,
+    "stem": "What is the purpose of Data Loss Prevention (DLP) in the context of AI on Google Cloud?",
+    "choice_a": "Preventing physical data center outages",
+    "choice_b": "Discovering, classifying, and protecting sensitive information in data used by AI systems",
+    "choice_c": "Compressing AI model outputs to reduce storage costs",
+    "choice_d": "Backing up AI model weights to prevent data loss",
+    "correct_answer": "b",
+    "explanation": "Cloud Data Loss Prevention (DLP) helps organizations identify, classify, and protect sensitive information (PII, financial data, health records) in datasets used for AI training and inference. It ensures sensitive data doesn't inadvertently flow into AI systems or appear in AI outputs."
+  },
+  {
+    "id": 55, "domain_id": 4, "subtopic_id": 17,
+    "stem": "What is a key challenge in change management when implementing AI in an organization?",
+    "choice_a": "Choosing the right cloud provider",
+    "choice_b": "Addressing employee fear of job displacement and building trust through transparent communication and upskilling",
+    "choice_c": "Finding enough GPU compute for training",
+    "choice_d": "Selecting the right programming language for AI development",
+    "correct_answer": "b",
+    "explanation": "A primary change management challenge is addressing employee concerns about job displacement. Successful AI adoption requires transparent communication about AI's role (augmentation vs. replacement), visible leadership support, and upskilling programs that help employees work alongside AI effectively."
+  },
+  {
+    "id": 56, "domain_id": 1, "subtopic_id": 5,
+    "stem": "What is 'prompt injection' and why is it a security concern?",
+    "choice_a": "Adding too many examples to a few-shot prompt",
+    "choice_b": "An attack where malicious instructions are embedded in user inputs to hijack an AI model's behavior",
+    "choice_c": "Injecting training data into a deployed model",
+    "choice_d": "A technique for speeding up prompt processing",
+    "correct_answer": "b",
+    "explanation": "Prompt injection is an attack where adversarial instructions are hidden in inputs (e.g., documents, web pages, user messages) to override a model's system instructions and cause unintended behavior. It's analogous to SQL injection — a serious security concern for AI applications processing untrusted content."
+  },
+  {
+    "id": 57, "domain_id": 2, "subtopic_id": 7,
+    "stem": "What is Gemini Flash optimized for compared to Gemini Pro?",
+    "choice_a": "Maximum reasoning capability and accuracy",
+    "choice_b": "Speed and efficiency for high-volume, latency-sensitive tasks at lower cost",
+    "choice_c": "On-device processing without internet connectivity",
+    "choice_d": "Exclusively processing image data",
+    "correct_answer": "b",
+    "explanation": "Gemini Flash is optimized for speed and cost efficiency, making it ideal for high-throughput, latency-sensitive applications where response time and cost matter more than maximum capability. It's Google's fast, efficient model for production workloads at scale."
+  },
+  {
+    "id": 58, "domain_id": 3, "subtopic_id": 14,
+    "stem": "What is 'semantic search' and how does it differ from keyword search?",
+    "choice_a": "Semantic search is faster but less accurate than keyword search",
+    "choice_b": "Semantic search understands the meaning and intent of queries rather than matching exact keywords, returning conceptually relevant results",
+    "choice_c": "Semantic search only works with structured data",
+    "choice_d": "Semantic search requires more user input to function",
+    "correct_answer": "b",
+    "explanation": "Unlike keyword search (exact string matching), semantic search uses embeddings to understand the meaning and intent behind queries. A semantic search for 'ways to save money' will find documents about 'frugal living tips' even without keyword overlap. This is foundational to RAG systems."
+  },
+  {
+    "id": 59, "domain_id": 4, "subtopic_id": 18,
+    "stem": "What is an 'AI proof of concept' (PoC) and when should it be used?",
+    "choice_a": "A legal document proving that an AI system doesn't infringe on patents",
+    "choice_b": "A small-scale prototype that validates whether AI can solve a specific problem before committing to full implementation",
+    "choice_c": "A certification that proves an AI model meets safety standards",
+    "choice_d": "A government regulation requiring proof that AI systems work as intended",
+    "correct_answer": "b",
+    "explanation": "An AI PoC is a small, focused prototype that tests whether AI can viably address a specific business problem. PoCs reduce risk by validating technical feasibility, data quality, and business value before significant investment. They help organizations learn fast and fail cheaply."
+  },
+  {
+    "id": 60, "domain_id": 4, "subtopic_id": 20,
+    "stem": "How can generative AI benefit the retail industry?",
+    "choice_a": "By replacing physical retail stores entirely",
+    "choice_b": "By personalizing product recommendations, generating tailored marketing content, powering shopping assistants, and automating product descriptions",
+    "choice_c": "By managing inventory through physical robots exclusively",
+    "choice_d": "By eliminating the need for human customer service representatives",
+    "correct_answer": "b",
+    "explanation": "Retail gen AI applications include: hyper-personalized product recommendations, AI shopping assistants, automated product description generation, personalized email/ad copy, virtual try-ons, and customer service chatbots. These applications drive conversion, reduce costs, and improve customer experience."
+  },
+  {
+    "id": 61, "domain_id": 1, "subtopic_id": 2,
+    "stem": "What is 'transfer learning' in machine learning?",
+    "choice_a": "Moving data between different cloud storage buckets",
+    "choice_b": "Applying knowledge gained from training on one task to improve performance on a related but different task",
+    "choice_c": "Transferring a model from one cloud provider to another",
+    "choice_d": "Sending model predictions to downstream systems",
+    "correct_answer": "b",
+    "explanation": "Transfer learning leverages knowledge from pre-trained models, adapting them to new tasks with less data and compute. Foundation models are the ultimate form of transfer learning — pre-trained on vast data, then fine-tuned for specific tasks. This is why foundation models are transformative."
+  },
+  {
+    "id": 62, "domain_id": 2, "subtopic_id": 8,
+    "stem": "What is the benefit of using Vertex AI's managed notebooks (Colab Enterprise)?",
+    "choice_a": "They provide free unlimited compute for any AI workload",
+    "choice_b": "They offer managed, scalable notebook environments with built-in security, collaboration, and direct access to GCP services",
+    "choice_c": "They automatically write code for any ML task without user input",
+    "choice_d": "They replace the need for any data science expertise",
+    "correct_answer": "b",
+    "explanation": "Vertex AI's managed notebooks provide secure, scalable Jupyter environments with GCP integration (BigQuery, Vertex AI services), team collaboration features, and auto-scaling compute. They eliminate infrastructure management overhead so data scientists can focus on model development."
+  },
+  {
+    "id": 63, "domain_id": 3, "subtopic_id": 15,
+    "stem": "When is fine-tuning preferred over prompt engineering for improving model performance?",
+    "choice_a": "When you want to quickly test a new capability without significant investment",
+    "choice_b": "When you have substantial domain-specific training data, need consistent behavior at scale, or require capabilities not achievable through prompting alone",
+    "choice_c": "When the task is simple enough that basic prompts already work well",
+    "choice_d": "When you don't have any labeled data available",
+    "correct_answer": "b",
+    "explanation": "Fine-tuning is preferred when: you have sufficient high-quality domain-specific data (hundreds to thousands of examples), you need consistent style/format at scale (not relying on lengthy prompts), or the task requires knowledge/behavior not captured in the base model. It has higher upfront cost but lower inference cost."
+  },
+  {
+    "id": 64, "domain_id": 4, "subtopic_id": 19,
+    "stem": "What is 'model transparency' in responsible AI?",
+    "choice_a": "Making the model's source code publicly available",
+    "choice_b": "Providing clear information about how AI models work, their limitations, training data, and decision-making processes",
+    "choice_c": "Ensuring model outputs are always visible to all users",
+    "choice_d": "Removing all security restrictions from AI systems",
+    "correct_answer": "b",
+    "explanation": "Model transparency means being open about how AI systems make decisions, what data they were trained on, their known limitations, and how they should and shouldn't be used. It builds trust, enables appropriate oversight, and helps users understand when to question AI outputs."
+  },
+  {
+    "id": 65, "domain_id": 1, "subtopic_id": 4,
+    "stem": "What is 'code generation' as a generative AI use case?",
+    "choice_a": "Generating QR codes for authentication",
+    "choice_b": "Using AI models to automatically write, complete, explain, debug, or translate programming code",
+    "choice_c": "Generating machine code from high-level programming languages",
+    "choice_d": "Creating security codes for encryption systems",
+    "correct_answer": "b",
+    "explanation": "Code generation is a powerful gen AI use case where models write, complete, explain, refactor, or debug code from natural language descriptions or partial code. Tools like GitHub Copilot and Gemini Code Assist can significantly accelerate developer productivity."
+  },
+  {
+    "id": 66, "domain_id": 2, "subtopic_id": 12,
+    "stem": "What is a 'multi-agent system' in generative AI?",
+    "choice_a": "A system with multiple human employees reviewing AI outputs",
+    "choice_b": "A system where multiple specialized AI agents collaborate, each handling different aspects of a complex task",
+    "choice_c": "Multiple copies of the same AI model running in parallel for redundancy",
+    "choice_d": "A system requiring multiple API keys to function",
+    "correct_answer": "b",
+    "explanation": "Multi-agent systems use multiple specialized AI agents that collaborate to complete complex tasks. One orchestrator agent breaks down tasks and delegates to specialist agents (e.g., a research agent, code agent, data agent). This enables tackling problems too complex for a single model."
+  },
+  {
+    "id": 67, "domain_id": 1, "subtopic_id": 6,
+    "stem": "What does FID (Fréchet Inception Distance) measure in generative AI evaluation?",
+    "choice_a": "The financial impact of AI deployment",
+    "choice_b": "The quality and diversity of generated images by comparing their feature distributions to real images",
+    "choice_c": "The inference speed of image generation models",
+    "choice_d": "The number of distinct objects that can be generated by an image model",
+    "correct_answer": "b",
+    "explanation": "FID measures image generation quality by comparing the statistical distribution of features in generated images versus real images using a pre-trained inception network. Lower FID scores indicate higher quality and more realistic generated images."
+  },
+  {
+    "id": 68, "domain_id": 2, "subtopic_id": 10,
+    "stem": "What is NotebookLM and what is its primary purpose?",
+    "choice_a": "A machine learning training notebook on Google Cloud",
+    "choice_b": "An AI-powered research tool by Google that grounds responses in user-uploaded documents to help understand and synthesize complex information",
+    "choice_c": "A version control system for Jupyter notebooks",
+    "choice_d": "A Google Cloud monitoring tool for LLM performance",
+    "correct_answer": "b",
+    "explanation": "NotebookLM is Google's AI-powered research assistant that analyzes user-uploaded documents (PDFs, Google Docs, etc.) and answers questions grounded in those sources. It can create summaries, briefing docs, and even audio overviews, making it a powerful tool for researchers and knowledge workers."
+  },
+  {
+    "id": 69, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What is 'top-k sampling' in language model generation?",
+    "choice_a": "Selecting the top-k most important features for training",
+    "choice_b": "Restricting token sampling to the k most probable next tokens, controlling generation randomness",
+    "choice_c": "Evaluating a model on the top-k benchmark datasets",
+    "choice_d": "Using the top-k training examples for few-shot learning",
+    "correct_answer": "b",
+    "explanation": "Top-k sampling restricts the sampling pool to the k most probable next tokens at each generation step, then samples from this truncated distribution. Setting k=1 (greedy decoding) gives the most likely token; larger k values allow more diversity. It helps avoid very low-probability tokens."
+  },
+  {
+    "id": 70, "domain_id": 4, "subtopic_id": 18,
+    "stem": "What is 'data governance' in the context of AI projects?",
+    "choice_a": "Government regulations that prohibit AI use in certain industries",
+    "choice_b": "The framework of policies, processes, and standards ensuring data quality, security, privacy, and appropriate use throughout the AI lifecycle",
+    "choice_c": "A committee that approves which datasets can be purchased",
+    "choice_d": "The technical process of migrating data between databases",
+    "correct_answer": "b",
+    "explanation": "Data governance for AI establishes policies for data collection (consent, sourcing), quality (validation, labeling standards), security (access control, encryption), privacy (PII handling, anonymization), and lineage (tracking data origin and transformations). Without strong data governance, AI projects face compliance, quality, and trust risks."
+  },
+  {
+    "id": 71, "domain_id": 1, "subtopic_id": 3,
+    "stem": "What is 'tokenization' in large language models?",
+    "choice_a": "Converting AI model outputs to financial tokens for payment",
+    "choice_b": "The process of breaking text into smaller units (tokens) that the model processes — tokens are typically words, subwords, or characters",
+    "choice_c": "Generating unique security tokens for API authentication",
+    "choice_d": "Converting binary model weights into readable text",
+    "correct_answer": "b",
+    "explanation": "Tokenization converts input text into tokens — the basic units LLMs process. Tokens are typically subword units (e.g., BPE encoding) that balance vocabulary size and coverage. Understanding tokenization matters for pricing (charged per token), context window limits, and understanding model behavior with different languages."
+  },
+  {
+    "id": 72, "domain_id": 2, "subtopic_id": 11,
+    "stem": "What does 'model governance' mean in enterprise AI deployments?",
+    "choice_a": "Choosing which government regulations apply to your AI system",
+    "choice_b": "Policies and processes for managing the AI model lifecycle including versioning, access control, audit trails, and retirement",
+    "choice_c": "A governance body that decides which AI models to purchase",
+    "choice_d": "Ensuring models are stored in a governance-compliant data center",
+    "correct_answer": "b",
+    "explanation": "Model governance encompasses the policies and processes for managing AI models throughout their lifecycle: version control, access permissions (who can deploy/modify models), audit trails of model changes and decisions, performance monitoring, and model retirement criteria. It's essential for enterprise accountability and compliance."
+  },
+  {
+    "id": 73, "domain_id": 4, "subtopic_id": 20,
+    "stem": "How can generative AI transform the education sector?",
+    "choice_a": "By replacing all teachers with AI tutors",
+    "choice_b": "By creating personalized learning experiences, generating custom practice materials, providing instant feedback, and supporting diverse learning needs",
+    "choice_c": "By automatically grading all examinations without teacher review",
+    "choice_d": "By standardizing all curricula globally",
+    "correct_answer": "b",
+    "explanation": "Gen AI in education enables: personalized tutoring adapted to individual learning pace, automatically generated practice problems and explanations, instant feedback on writing, accessibility tools for diverse learners, and support for teachers in creating lesson materials — augmenting rather than replacing educators."
+  },
+  {
+    "id": 74, "domain_id": 1, "subtopic_id": 5,
+    "stem": "What is 'model watermarking' used for in generative AI?",
+    "choice_a": "Adding visual watermarks to AI-generated images for copyright protection and attribution",
+    "choice_b": "Both A and the ability to detect AI-generated content to prevent misuse and misinformation",
+    "choice_c": "Compressing model weights to reduce storage costs",
+    "choice_d": "Marking training data for quality control purposes",
+    "correct_answer": "b",
+    "explanation": "Model watermarking techniques embed invisible signals in AI-generated content (images, text, audio) to identify it as AI-generated. This serves copyright protection (content attribution) and misinformation prevention (detecting AI-generated deepfakes or disinformation). Google's SynthID is an example."
+  },
+  {
+    "id": 75, "domain_id": 3, "subtopic_id": 16,
+    "stem": "What is a 'safety filter' in the context of generative AI?",
+    "choice_a": "A hardware component that protects AI GPUs from power surges",
+    "choice_b": "A system that evaluates and blocks model outputs containing harmful, offensive, or dangerous content before they reach users",
+    "choice_c": "A network firewall that protects AI APIs from unauthorized access",
+    "choice_d": "A data filter that removes sensitive information from training datasets",
+    "correct_answer": "b",
+    "explanation": "Safety filters are content moderation systems applied to AI model outputs. They evaluate generated content against safety policies, blocking or flagging outputs that contain hate speech, violence, sexual content, dangerous instructions, or other policy violations before delivery to users."
+  },
+  {
+    "id": 76, "domain_id": 2, "subtopic_id": 9,
+    "stem": "What is the purpose of 'model versioning' in Vertex AI?",
+    "choice_a": "Displaying the version number in the model's API responses",
+    "choice_b": "Maintaining multiple versions of a model to enable A/B testing, rollback, and tracking improvements over time",
+    "choice_c": "Renaming models when they are retrained",
+    "choice_d": "Automatically updating models to the latest version without user intervention",
+    "correct_answer": "b",
+    "explanation": "Model versioning in Vertex AI allows teams to maintain, compare, and deploy multiple versions of models. This enables A/B testing between versions, safe deployment with the ability to roll back to a previous version if issues arise, and tracking model lineage and performance improvements over time."
+  },
+  {
+    "id": 77, "domain_id": 4, "subtopic_id": 17,
+    "stem": "What is a 'Center of Excellence' (CoE) for AI in an organization?",
+    "choice_a": "A data center dedicated exclusively to AI computing",
+    "choice_b": "A centralized team that drives AI strategy, establishes standards, builds reusable capabilities, and supports business units in AI adoption",
+    "choice_c": "A competitive assessment of AI capabilities relative to industry peers",
+    "choice_d": "An external consulting firm hired to implement AI projects",
+    "correct_answer": "b",
+    "explanation": "An AI Center of Excellence (CoE) is a cross-functional team that centralizes AI expertise and governance. It sets standards and best practices, builds reusable AI components, provides guidance to business units, manages AI tools and platforms, and tracks AI initiative performance across the organization."
+  },
+  {
+    "id": 78, "domain_id": 1, "subtopic_id": 4,
+    "stem": "What is 'text summarization' as a generative AI application?",
+    "choice_a": "Replacing long words with shorter synonyms",
+    "choice_b": "Automatically generating concise, coherent summaries of longer documents, articles, or conversations",
+    "choice_c": "Converting spoken audio to written text",
+    "choice_d": "Translating text between languages",
+    "correct_answer": "b",
+    "explanation": "Text summarization uses generative AI to produce concise summaries of longer content — research papers, news articles, meeting transcripts, legal documents, or customer feedback. It can be extractive (selecting key sentences) or abstractive (generating new summary text), dramatically reducing information processing time."
+  },
+  {
+    "id": 79, "domain_id": 3, "subtopic_id": 13,
+    "stem": "What is the 'top-p' (nucleus) sampling parameter in language generation?",
+    "choice_a": "The probability that the model will accept or reject a user prompt",
+    "choice_b": "A sampling method that considers the smallest set of tokens whose cumulative probability exceeds p, controlling output diversity",
+    "choice_c": "The percentage of training data to use for validation",
+    "choice_d": "The top percentage of users who can access a model",
+    "correct_answer": "b",
+    "explanation": "Top-p (nucleus) sampling selects the smallest set of tokens whose cumulative probability mass exceeds p, then samples from this set. Unlike top-k (fixed number of tokens), top-p adapts to the probability distribution — using fewer tokens when one is highly probable and more when probabilities are spread evenly."
+  },
+  {
+    "id": 80, "domain_id": 2, "subtopic_id": 7,
+    "stem": "What is Google's AI Hypercomputer and what does it enable?",
+    "choice_a": "A physical supercomputer available for rent by AI researchers",
+    "choice_b": "A tightly integrated system of AI-optimized hardware (TPUs, GPUs), networking, and software optimized for large-scale AI training and inference at high efficiency",
+    "choice_c": "A consumer laptop optimized for running AI applications locally",
+    "choice_d": "An AI system that manages Google's cloud infrastructure",
+    "correct_answer": "b",
+    "explanation": "Google's AI Hypercomputer is an integrated AI supercomputing architecture combining custom TPUs/GPUs, ultra-high-bandwidth networking (ICI), and optimized system software. It enables efficient large-scale model training and serving, underpinning Google's AI infrastructure for training Gemini and serving AI workloads."
+  },
+  {
+    "id": 81, "domain_id": 4, "subtopic_id": 19,
+    "stem": "What does 'responsible AI' adoption require from business leaders?",
+    "choice_a": "Minimizing AI investment to reduce risk exposure",
+    "choice_b": "Establishing clear AI governance policies, ensuring diverse teams build AI, auditing for bias, and maintaining accountability for AI decisions",
+    "choice_c": "Delegating all AI decisions to technical teams without executive involvement",
+    "choice_d": "Avoiding AI use until all regulatory frameworks are finalized",
+    "correct_answer": "b",
+    "explanation": "Responsible AI leadership requires: defining ethical guidelines and governance structures, ensuring diverse, inclusive teams develop AI systems, regularly auditing for bias and unintended consequences, establishing clear accountability chains for AI decisions, and engaging openly with stakeholders about AI use."
+  },
+  {
+    "id": 82, "domain_id": 1, "subtopic_id": 2,
+    "stem": "What is the difference between supervised and unsupervised learning?",
+    "choice_a": "Supervised learning requires a teacher, while unsupervised learning uses self-study materials",
+    "choice_b": "Supervised learning trains on labeled data with known outputs; unsupervised learning finds patterns in unlabeled data without predefined answers",
+    "choice_c": "Supervised learning is more accurate than unsupervised learning in all cases",
+    "choice_d": "Unsupervised learning requires more compute than supervised learning",
+    "correct_answer": "b",
+    "explanation": "Supervised learning uses labeled training data (input-output pairs) to learn mappings, enabling tasks like classification and regression. Unsupervised learning finds hidden patterns (clusters, dimensions) in unlabeled data. Both are fundamental ML paradigms with different use cases."
+  },
+  {
+    "id": 83, "domain_id": 2, "subtopic_id": 12,
+    "stem": "What distinguishes Dialogflow CX from Dialogflow ES?",
+    "choice_a": "Dialogflow CX is cheaper but less capable",
+    "choice_b": "Dialogflow CX uses a flow-based (state machine) design for complex multi-turn conversations, while ES uses a simpler intent-based model",
+    "choice_c": "Dialogflow ES supports more languages than CX",
+    "choice_d": "Dialogflow CX only works for voice applications",
+    "correct_answer": "b",
+    "explanation": "Dialogflow CX uses a visual flow/page-based model suitable for complex enterprise chatbots with multiple conversation paths. Dialogflow ES (Essentials) uses a simpler intent-entity model suitable for smaller chatbots. CX offers better scalability, versioning, and testing for enterprise deployments."
+  },
+  {
+    "id": 84, "domain_id": 3, "subtopic_id": 14,
+    "stem": "What is 'chunking' in the context of RAG systems?",
+    "choice_a": "Dividing computing tasks across multiple GPUs",
+    "choice_b": "Breaking documents into smaller segments before embedding them, optimizing relevance and context in retrieval",
+    "choice_c": "Compressing model weights into chunks for efficient storage",
+    "choice_d": "Grouping similar user queries for batch processing",
+    "correct_answer": "b",
+    "explanation": "Chunking splits documents into smaller pieces (by paragraph, sentence, or fixed token count) before creating embeddings for a vector database. Good chunking strategy is crucial — too large and retrieved chunks lose specificity; too small and they lose context. Chunk size and overlap are important hyperparameters for RAG quality."
+  },
+  {
+    "id": 85, "domain_id": 4, "subtopic_id": 20,
+    "stem": "What manufacturing use case benefits from generative AI?",
+    "choice_a": "Physically assembling products on the factory floor",
+    "choice_b": "Generating maintenance reports, predicting equipment failures using anomaly detection, optimizing supply chains, and assisting engineers with technical documentation",
+    "choice_c": "Operating heavy machinery autonomously without human oversight",
+    "choice_d": "Replacing all quality control inspections with AI",
+    "correct_answer": "b",
+    "explanation": "Manufacturing gen AI applications include: predictive maintenance (detecting equipment anomalies before failures), technical documentation generation, supply chain optimization through scenario analysis, quality report automation, and engineering assistant tools that help workers access technical knowledge faster."
+  }
+]

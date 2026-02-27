@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcp-genai-leader-tutor"
+version = "0.1.0"
+description = "CLI study tool for the GCP Generative AI Leader certification"
+requires-python = ">=3.11"
+dependencies = [
+    "typer>=0.12.0",
+    "rich>=13.7.0",
+]
+
+[project.scripts]
+genai-tutor = "genai_tutor.app:app"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"genai_tutor" = ["content/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

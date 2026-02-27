@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Fundamentals of Generative AI",
+    "section_number": 1,
+    "exam_weight": 30.0,
+    "description": "Core concepts of AI and generative AI, machine learning lifecycle, foundation models, multimodal architectures, responsible AI principles, and evaluation metrics.",
+    "subtopics": [
+      {"id": 1, "name": "AI vs Generative AI", "description": "Definitions, evolution, and business impact of AI and generative AI."},
+      {"id": 2, "name": "Machine Learning Fundamentals", "description": "ML lifecycle, data types, model training, and evaluation."},
+      {"id": 3, "name": "Foundation Models & Architectures", "description": "Large language models, diffusion models, transformers, embeddings, and vector representations."},
+      {"id": 4, "name": "Gen AI Use Cases", "description": "Content creation, summarization, code generation, chatbots, image/video generation, and automation."},
+      {"id": 5, "name": "Responsible AI Principles", "description": "Fairness, bias, interpretability, explainability, safety, and privacy in AI systems."},
+      {"id": 6, "name": "Evaluation Metrics", "description": "BLEU, ROUGE, FID, perplexity, hallucination rates, and human-centered evaluation methods."}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Google Cloud Gen AI Products & Strategy",
+    "section_number": 2,
+    "exam_weight": 35.0,
+    "description": "Google Cloud's generative AI ecosystem including Gemini, Vertex AI, Model Garden, Generative AI Studio, Workspace integrations, AI governance, and compliance frameworks.",
+    "subtopics": [
+      {"id": 7, "name": "Gemini Models", "description": "Gemini Ultra, Pro, Flash, and Nano — capabilities, multimodal features, and use cases."},
+      {"id": 8, "name": "Vertex AI Platform", "description": "Unified ML platform for building, deploying, and managing AI models at scale."},
+      {"id": 9, "name": "Model Garden & Generative AI Studio", "description": "Discovering, customizing, and deploying foundation models; prompt design and testing."},
+      {"id": 10, "name": "Google Workspace AI Features", "description": "Duet AI / Gemini for Workspace — Docs, Sheets, Slides, Gmail, and Meet integrations."},
+      {"id": 11, "name": "Google Cloud AI Governance", "description": "SAIF, Data Loss Prevention, IAM, CMEK encryption, model monitoring, and compliance."},
+      {"id": 12, "name": "Agentspace & AI Agents", "description": "Conversational agents, Dialogflow CX, Agent Builder, and multi-agent orchestration."}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Techniques to Improve Gen AI Model Output",
+    "section_number": 3,
+    "exam_weight": 20.0,
+    "description": "Prompt engineering, grounding, retrieval-augmented generation (RAG), fine-tuning, bias mitigation, and model evaluation strategies.",
+    "subtopics": [
+      {"id": 13, "name": "Prompt Engineering", "description": "Zero-shot, few-shot, chain-of-thought, role prompting, and multi-turn optimization techniques."},
+      {"id": 14, "name": "Grounding & RAG", "description": "Retrieval-augmented generation for factuality, relevance, and hallucination mitigation."},
+      {"id": 15, "name": "Fine-Tuning & Adaptation", "description": "Supervised fine-tuning, LoRA, PEFT, and reinforcement learning from human feedback (RLHF)."},
+      {"id": 16, "name": "Bias Detection & Mitigation", "description": "Identifying, measuring, and reducing bias in generative AI models and outputs."}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Business Strategies for Successful AI Adoption",
+    "section_number": 4,
+    "exam_weight": 15.0,
+    "description": "Organizational AI strategy, change management, ROI measurement, risk management, responsible deployment, and identifying AI opportunities across industries.",
+    "subtopics": [
+      {"id": 17, "name": "AI Strategy & Transformation", "description": "Building an AI-first culture, change management, and organizational readiness."},
+      {"id": 18, "name": "AI Project Implementation", "description": "Project lifecycle, stakeholder management, data strategy, and success measurement."},
+      {"id": 19, "name": "Risk, Ethics & Responsible AI", "description": "Risk assessment, fairness, privacy, transparency, and responsible deployment practices."},
+      {"id": 20, "name": "Industry Use Cases & Opportunities", "description": "Gen AI opportunities across healthcare, finance, retail, manufacturing, and other sectors."}
+    ]
+  }
+]
