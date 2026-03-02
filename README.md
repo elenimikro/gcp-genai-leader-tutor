@@ -27,8 +27,25 @@ A local CLI study tool to help you prepare for the [Google Cloud Generative AI L
 Requires Python 3.11+.
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/elenimikro/gcp-genai-leader-tutor.git
 cd gcp-genai-leader-tutor
+```
+
+Create and activate a virtual environment:
+
+```bash
+# macOS / Linux
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Windows
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Install the package:
+
+```bash
 pip install -e .
 ```
 
@@ -38,7 +55,7 @@ pip install -e .
 ```bash
 genai-tutor
 ```
-Then type commands at the `>` prompt: `study`, `quiz`, `flashcards`, `dashboard`, `review`, `plan`, `help`.
+Then type commands at the `>` prompt: `study`, `quiz`, `flashcards`, `dashboard`, `review`, `plan`, `import`, `help`.
 
 ### Direct commands
 ```bash
@@ -51,13 +68,15 @@ genai-tutor dashboard         # Readiness score
 genai-tutor review            # Drill weak areas
 genai-tutor plan              # View study plan
 genai-tutor plan --reset      # Reset all progress
+genai-tutor import <url|file> # Import supplementary reading
+genai-tutor import --list     # List imported content
+genai-tutor import --delete 1 # Delete record by ID
 genai-tutor help              # Exam info and tips
 ```
 
 ## Running Tests
 
 ```bash
-pip install pytest
 pytest
 ```
 
