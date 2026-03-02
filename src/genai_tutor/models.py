@@ -66,3 +66,14 @@ class UserProgress:
     reading_complete: bool = False
     flashcard_complete: bool = False
     quiz_complete: bool = False
+
+
+@dataclass
+class ImportedContent:
+    id: int
+    title: str
+    source_ref: str
+    domain_id: int
+    subtopic_id: int
+    content: str
+    imported_at: str
