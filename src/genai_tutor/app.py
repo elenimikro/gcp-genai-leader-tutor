@@ -15,6 +15,8 @@ from genai_tutor.seed import seed_all
 import genai_tutor.quiz as quiz_engine
 import genai_tutor.flashcards as fc_engine
 import genai_tutor.study as study_engine
+import genai_tutor.importer as importer_engine
+from genai_tutor.importer import ContentImportError
 from genai_tutor.dashboard import get_dashboard_data
 from genai_tutor.review import get_weak_domains, get_weak_subtopics, get_all_domains, get_all_subtopics
 
@@ -79,6 +81,7 @@ def _show_main_menu() -> None:
     console.print("  [bold]dashboard[/bold]  - View your readiness score and progress")
     console.print("  [bold]review[/bold]     - Drill your weak areas")
     console.print("  [bold]plan[/bold]       - View or reset your 28-day study plan")
+    console.print("  [bold]import[/bold]     - Import supplementary reading content")
     console.print("  [bold]help[/bold]       - Show exam information and tips")
     console.print("  [bold]quit[/bold]       - Exit")
     console.print()
@@ -112,6 +115,8 @@ def main(ctx: typer.Context) -> None:
             _run_review()
         elif cmd == "plan":
             _run_plan()
+        elif cmd == "import":
+            _run_import()
         elif cmd == "help":
             _run_help()
         elif cmd == "":
@@ -149,6 +154,22 @@ def _run_study_session() -> None:
     if not progress.reading_complete:
         console.print(f"\n[bold cyan]READING[/bold cyan]")
         console.print(Panel(_wrap(day.reading_content), title="Study Material", border_style="cyan"))
+
+        # Additional imported reading
+        subtopic_id = day.subtopic_ids[0] if day.subtopic_ids else 0
+        imported = importer_engine.get_imported_for_domain_subtopic(day.domain_id, subtopic_id)
+        if imported:
+            console.print(f"\n[bold cyan]ADDITIONAL READING[/bold cyan] ({len(imported)} item(s))")
+            for item in imported:
+                try:
+                    ans = console.input(f"Show '{item.title}'? (y/n/skip all): ").strip().lower()
+                except EOFError:
+                    ans = "skip all"
+                if ans == "skip all":
+                    break
+                if ans == "y":
+                    console.print(Panel(_wrap(item.content), title=item.title, subtitle=item.source_ref[:60]))
+
         try:
             ans = console.input("\n[dim]Mark reading as complete? (y/n)[/dim]: ").strip().lower()
         except EOFError:
@@ -595,6 +616,245 @@ def _run_plan(do_reset: bool = False) -> None:
     console.print(f"Current day: {current}")
     console.print("\n[dim]Run with --reset to start over.[/dim]")
     _prompt_continue()
+
+
+# ---------------------------------------------------------------------------
+# Content import
+# ---------------------------------------------------------------------------
+
+@app.command(name="import")
+def import_content(
+    source: str = typer.Argument(default="", help="URL or file path to import"),
+    domain: int = typer.Option(0, "--domain", "-d", help="Domain ID"),
+    subtopic: int = typer.Option(0, "--subtopic", "-s", help="Subtopic ID"),
+    title: str = typer.Option("", "--title", "-t", help="Title for the imported content"),
+    list_all: bool = typer.Option(False, "--list", "-l", help="List all imported content"),
+    delete: int = typer.Option(0, "--delete", help="Delete imported content by ID"),
+) -> None:
+    """Import supplementary reading content from a URL, PDF, DOCX, text, or JSON pack."""
+    init_db()
+    seed_all()
+    _run_import(
+        source=source,
+        domain_id=domain,
+        subtopic_id=subtopic,
+        title=title,
+        list_all=list_all,
+        delete_id=delete,
+    )
+
+
+def _run_import(
+    source: str = "",
+    domain_id: int = 0,
+    subtopic_id: int = 0,
+    title: str = "",
+    list_all: bool = False,
+    delete_id: int = 0,
+) -> None:
+    console.clear()
+    _print_header("Content Import", "Add supplementary reading material")
+
+    # --- LIST mode ---
+    if list_all:
+        records = importer_engine.get_all_imported_content()
+        if not records:
+            console.print("\n[dim]No imported content yet. Use 'genai-tutor import <source>' to add some.[/dim]")
+        else:
+            table = Table(box=box.ROUNDED, show_header=True, header_style="bold cyan")
+            table.add_column("ID", justify="right", width=4)
+            table.add_column("Title")
+            table.add_column("Domain / Subtopic")
+            table.add_column("Source", no_wrap=True)
+            table.add_column("Date", width=12)
+            for r in records:
+                src_short = r["source_ref"][:50] + ("…" if len(r["source_ref"]) > 50 else "")
+                date_short = r["imported_at"][:10]
+                table.add_row(
+                    str(r["id"]),
+                    r["title"],
+                    f"{r['domain_name']} / {r['subtopic_name']}",
+                    src_short,
+                    date_short,
+                )
+            console.print(table)
+        _prompt_continue()
+        return
+
+    # --- DELETE mode ---
+    if delete_id:
+        deleted = importer_engine.delete_imported_content(delete_id)
+        if deleted:
+            _print_success(f"Deleted imported content record #{delete_id}.")
+        else:
+            _print_error(f"No imported content found with ID {delete_id}.")
+        _prompt_continue()
+        return
+
+    # --- IMPORT mode ---
+    if not source:
+        try:
+            source = console.input("[bold]Enter URL or file path: [/bold]").strip()
+        except EOFError:
+            return
+        if not source:
+            console.print("[dim]No source provided. Cancelling.[/dim]")
+            return
+
+    # JSON pack branch
+    from pathlib import Path as _Path
+    if source.endswith(".json") and not source.startswith(("http://", "https://")):
+        _handle_json_pack_import(_Path(source))
+        _prompt_continue()
+        return
+
+    # Single content import
+    console.print(f"\n[dim]Fetching content from: {source}[/dim]")
+    try:
+        text, source_ref = importer_engine.extract_content(source)
+    except ValueError as exc:
+        if str(exc) == "json":
+            _handle_json_pack_import(_Path(source))
+            _prompt_continue()
+            return
+        _print_error(f"Could not extract content: {exc}")
+        _prompt_continue()
+        return
+    except ContentImportError as exc:
+        _print_error(str(exc))
+        _prompt_continue()
+        return
+
+    # Preview
+    preview = text[:500] + ("…" if len(text) > 500 else "")
+    console.print(Panel(preview, title="Preview (first 500 chars)", border_style="dim"))
+
+    # Title
+    if not title:
+        default_title = _derive_default_title(source)
+        try:
+            entered = console.input(f"[bold]Title[/bold] [{default_title}]: ").strip()
+        except EOFError:
+            entered = ""
+        title = entered or default_title
+
+    # Domain
+    if domain_id == 0:
+        domain_id = _select_domain_or_all()
+        if domain_id == 0:
+            console.print("[dim]Import cancelled — no domain selected.[/dim]")
+            return
+
+    # Subtopic
+    if subtopic_id == 0:
+        subtopic_id = _select_subtopic_for_domain(domain_id)
+        if subtopic_id == 0:
+            console.print("[dim]Import cancelled — no subtopic selected.[/dim]")
+            return
+
+    # Confirm
+    console.print(f"\n[bold]Summary:[/bold]")
+    console.print(f"  Title:    {title}")
+    console.print(f"  Source:   {source_ref[:80]}")
+    console.print(f"  Domain:   {domain_id}  |  Subtopic: {subtopic_id}")
+    console.print(f"  Length:   {len(text)} characters")
+    try:
+        confirm = console.input("\n[bold]Save? (y/n): [/bold]").strip().lower()
+    except EOFError:
+        confirm = "n"
+    if confirm != "y":
+        console.print("[dim]Import cancelled.[/dim]")
+        return
+
+    new_id = importer_engine.save_imported_content(title, source_ref, domain_id, subtopic_id, text)
+    _print_success(f"Content saved as record #{new_id}: '{title}'")
+    _prompt_continue()
+
+
+def _handle_json_pack_import(path) -> None:
+    """Interactively import records from a JSON content pack."""
+    from pathlib import Path as _Path
+    try:
+        records = importer_engine.parse_json_pack(_Path(path))
+    except ContentImportError as exc:
+        _print_error(str(exc))
+        return
+
+    console.print(f"\n[bold]JSON pack contains {len(records)} record(s).[/bold]")
+    bulk = False
+    for i, rec in enumerate(records):
+        preview = str(rec.get("content", ""))[:200]
+        console.print(
+            f"\n[{i + 1}/{len(records)}] [bold]{rec['title']}[/bold]"
+            f"  (domain {rec['domain_id']}, subtopic {rec['subtopic_id']})"
+        )
+        console.print(f"[dim]{preview}{'…' if len(str(rec.get('content',''))) > 200 else ''}[/dim]")
+
+        if bulk:
+            choice = "y"
+        else:
+            try:
+                choice = console.input("Import this record? (y/n/all/quit): ").strip().lower()
+            except EOFError:
+                choice = "quit"
+
+        if choice == "quit":
+            console.print("[dim]Import stopped.[/dim]")
+            return
+        if choice == "all":
+            bulk = True
+            choice = "y"
+        if choice == "y":
+            importer_engine.save_imported_content(
+                title=rec["title"],
+                source_ref=str(path),
+                domain_id=int(rec["domain_id"]),
+                subtopic_id=int(rec["subtopic_id"]),
+                content=rec["content"],
+            )
+            _print_success(f"Saved: '{rec['title']}'")
+        else:
+            console.print("[dim]Skipped.[/dim]")
+
+    console.print("\n[bold]JSON pack import complete.[/bold]")
+
+
+def _derive_default_title(source: str) -> str:
+    """Derive a human-readable default title from a URL or file path."""
+    if source.startswith(("http://", "https://")):
+        from urllib.parse import urlparse
+        path = urlparse(source).path.rstrip("/")
+        last = path.split("/")[-1] if path else source
+        name = last.split("?")[0].split("#")[0]
+        return name.replace("-", " ").replace("_", " ").title() or source
+    from pathlib import Path as _Path
+    return _Path(source).stem.replace("-", " ").replace("_", " ").title()
+
+
+def _select_subtopic_for_domain(domain_id: int) -> int:
+    """List subtopics for *domain_id* and prompt user to pick one. Returns 0 on cancel."""
+    from genai_tutor.review import get_all_subtopics
+    subtopics = [s for s in get_all_subtopics() if s["domain_id"] == domain_id]
+    if not subtopics:
+        console.print("[dim]No subtopics found for this domain.[/dim]")
+        return 0
+
+    console.print("\n[bold]Select subtopic:[/bold]")
+    for s in subtopics:
+        console.print(f"  [cyan]{s['id']})[/cyan] {s['name']}")
+    console.print("  [cyan]0)[/cyan] Cancel")
+
+    valid_ids = {s["id"] for s in subtopics}
+    while True:
+        try:
+            val = console.input("\nSubtopic ID: ").strip()
+        except EOFError:
+            return 0
+        if val == "0":
+            return 0
+        if val.isdigit() and int(val) in valid_ids:
+            return int(val)
+        console.print(f"[dim]Please enter one of: {', '.join(str(i) for i in sorted(valid_ids))} or 0 to cancel.[/dim]")
 
 
 # ---------------------------------------------------------------------------

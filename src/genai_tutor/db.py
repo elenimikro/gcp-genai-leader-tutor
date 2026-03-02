@@ -94,4 +94,14 @@ def init_db() -> None:
             key   TEXT PRIMARY KEY,
             value TEXT NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS imported_content (
+            id          INTEGER PRIMARY KEY AUTOINCREMENT,
+            title       TEXT    NOT NULL,
+            source_ref  TEXT    NOT NULL,
+            domain_id   INTEGER NOT NULL REFERENCES domains(id),
+            subtopic_id INTEGER NOT NULL REFERENCES subtopics(id),
+            content     TEXT    NOT NULL,
+            imported_at TEXT    NOT NULL
+        );
         """)

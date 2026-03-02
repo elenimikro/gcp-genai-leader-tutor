@@ -25,6 +25,6 @@ def test_init_db_creates_tables():
     expected = {
         "domains", "subtopics", "flashcards", "quiz_questions",
         "study_days", "user_progress", "quiz_results", "flashcard_results",
-        "user_settings",
+        "user_settings", "imported_content",
     }
     assert expected.issubset(tables)
