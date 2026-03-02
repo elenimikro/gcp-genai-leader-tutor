@@ -565,8 +565,8 @@ def _run_plan(do_reset: bool = False) -> None:
     _print_header("39-Day Study Plan", "GCP Generative AI Leader")
 
     if do_reset:
-        confirm = console.input("[bold red]This will reset ALL quiz results, flashcard progress, and study completion. Are you sure? (yes/no): [/bold red]").strip().lower()
-        if confirm == "yes":
+        confirm = console.input("[bold red]This will reset ALL quiz results, flashcard progress, and study completion. Are you sure? (y/n): [/bold red]").strip().lower()
+        if confirm in ("yes", "y"):
             study_engine.reset_progress()
             _print_success("All progress reset.")
         else:

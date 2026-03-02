@@ -67,12 +67,22 @@ genai-tutor flashcards --domain 3
 genai-tutor dashboard         # Readiness score
 genai-tutor review            # Drill weak areas
 genai-tutor plan              # View study plan
-genai-tutor plan --reset      # Reset all progress
+genai-tutor plan --reset      # Reset all progress (prompts y/n confirmation)
 genai-tutor import <url|file> # Import supplementary reading
 genai-tutor import --list     # List imported content
 genai-tutor import --delete 1 # Delete record by ID
 genai-tutor help              # Exam info and tips
 ```
+
+## Resetting Progress
+
+To wipe all quiz results, flashcard scores, and study completion and start fresh:
+
+```bash
+genai-tutor plan --reset
+```
+
+You will be prompted to confirm with `y`. This also re-seeds the study plan.
 
 ## Running Tests
 
