@@ -107,10 +107,13 @@ def get_total_days() -> int:
 
 
 def reset_progress() -> None:
+    from genai_tutor.seed import _seed_study_days
     with get_connection() as conn:
         conn.execute("DELETE FROM user_progress")
         conn.execute("DELETE FROM quiz_results")
         conn.execute("DELETE FROM flashcard_results")
+        conn.execute("DELETE FROM study_days")
         conn.execute(
             "UPDATE flashcards SET ease_factor=2.5, interval=0, repetitions=0, next_review=NULL, last_reviewed=NULL"
         )
+    _seed_study_days()
